@@ -10,7 +10,7 @@ This document describes the exact steps to release a new version of Mac Vault an
 - **xcodegen** installed (`brew install xcodegen`)
 - **Sparkle** CLI tools installed (`brew install sparkle`)
 - **Developer ID certificate** for distribution (optional — ad-hoc works for testing)
-- The **Sparkle EdDSA private key** (`releases/sparkle_private.pem`) — **keep this safe and never commit it**. This must be your own key, generated with `generate_keys` — you cannot reuse Dweep's `sparkle_private.pem` from the original FaceGate-Mac repo.
+- The **Sparkle EdDSA private key** (`releases/sparkle_private.pem`) — **keep this safe and never commit it**. 
 
 ---
 

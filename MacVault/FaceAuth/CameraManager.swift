@@ -21,7 +21,7 @@ final class CameraManager: NSObject, ObservableObject {
     var onFrameCaptured: ((CVPixelBuffer) -> Void)?
 
     private let videoOutput = AVCaptureVideoDataOutput()
-    private let processingQueue = DispatchQueue(label: "com.facegate.camera", qos: .userInitiated)
+    private let processingQueue = DispatchQueue(label: "com.macvault.camera", qos: .userInitiated)
 
     /// Unique ID of the user's preferred camera, persisted across launches.
     var selectedCameraID: String? {

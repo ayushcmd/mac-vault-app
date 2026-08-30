@@ -3,7 +3,7 @@ PURPOSE.md
 purpose.md
 *.xcodeproj/
 *.xcworkspace/
-FaceGate.xcodeproj/
+
 
 # macOS / OS X
 .DS_Store

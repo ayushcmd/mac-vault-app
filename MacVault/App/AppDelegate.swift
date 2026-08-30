@@ -116,7 +116,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             // Show auth dialog alert fallback for system-level quit signals.
             let alert = NSAlert()
             alert.messageText = "Authenticate to Quit"
-            alert.informativeText = "FaceGate is protecting your apps. Enter your password to quit."
+            alert.informativeText = "MacVault is protecting your apps. Enter your password to quit."
             alert.addButton(withTitle: "Cancel")
             alert.addButton(withTitle: "Quit Anyway")
             alert.alertStyle = .warning
@@ -156,7 +156,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     @objc private func openSettingsWindow() {
         closeMenuBarWindow()
 
-        ActionAuthWindow.show(reason: "FaceGate Settings") { [weak self] in
+        ActionAuthWindow.show(reason: "MacVault Settings") { [weak self] in
             guard let self = self else { return }
 
             if let existing = self.settingsWindow {
@@ -174,7 +174,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 backing: .buffered,
                 defer: false
             )
-            window.title = "FaceGate Settings"
+            window.title = "MacVault Settings"
             window.titleVisibility = .hidden
             window.titlebarAppearsTransparent = true
             window.backgroundColor = .clear
@@ -230,7 +230,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 AppMonitor.shared.startMonitoring()
                 // Find and close the setup window
                 for window in NSApp.windows {
-                    if window.title == "FaceGate Setup" {
+                    if window.title == "MacVault Setup" {
                         window.close()
                     }
                 }
@@ -239,7 +239,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 AppMonitor.shared.startMonitoring()
                 // Close the setup window
                 for window in NSApp.windows {
-                    if window.title == "FaceGate Setup" {
+                    if window.title == "MacVault Setup" {
                         window.close()
                     }
                 }
@@ -254,7 +254,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             backing: .buffered,
             defer: false
         )
-        window.title = "FaceGate Setup"
+        window.title = "MacVault Setup"
         window.level = .floating
         window.contentView = NSHostingView(rootView: setupView)
         window.center()
@@ -283,10 +283,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             let currentImmutable = resourceValues.isUserImmutable ?? false
             if currentImmutable != shouldProtect {
                 try? (bundleURL as NSURL).setResourceValue(shouldProtect, forKey: .isUserImmutableKey)
-                print("[FaceGate] Synced bundle immutable state to \(shouldProtect).")
+                print("[MacVault] Synced bundle immutable state to \(shouldProtect).")
             }
         } catch {
-            print("[FaceGate] Failed to sync uninstall protection on launch: \(error)")
+            print("[MacVault] Failed to sync uninstall protection on launch: \(error)")
         }
     }
 }
@@ -303,7 +303,7 @@ extension AppDelegate: SPUUpdaterDelegate {
         DispatchQueue.main.async {
             let alert = NSAlert()
             alert.messageText = "Update Failed — Uninstall Protection Is On"
-            alert.informativeText = "FaceGate's uninstall protection prevents the app bundle from being modified. To update, disable Uninstall Protection in Settings → Advanced, then check for updates again."
+            alert.informativeText = "MacVault's uninstall protection prevents the app bundle from being modified. To update, disable Uninstall Protection in Settings → Advanced, then check for updates again."
             alert.addButton(withTitle: "OK")
             alert.runModal()
         }

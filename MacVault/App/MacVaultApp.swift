@@ -3,7 +3,7 @@ import SwiftUI
 /// Main entry point for MacVault.
 /// Runs as a menu bar app with a shield icon.
 @main
-struct FaceGateApp: App {
+struct MacVaultApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     @AppStorage(FGConstants.setupCompletedKey) private var setupCompleted = false
