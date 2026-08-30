@@ -1,0 +1,69 @@
+name: Build DMG
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install xcodegen
+        run: brew install xcodegen
+
+      - name: Install create-dmg
+        run: brew install create-dmg
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build (ad-hoc signed, no Developer ID needed)
+        run: |
+          xcodebuild -project MacVault.xcodeproj \
+            -scheme "Mac Vault" \
+            -configuration Release \
+            -derivedDataPath build/DerivedData \
+            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=YES \
+            build
+
+      - name: Package into DMG
+        run: |
+          mkdir -p build/dmg_staging
+          BUILD_APP=$(find build/DerivedData -name "MacVault.app" -path "*/Build/Products/Release/*" | head -1)
+          cp -R "$BUILD_APP" build/dmg_staging/
+          create-dmg \
+            --volname "Mac Vault" \
+            --background "non-app-assets/dmg_background.png" \
+            --window-pos 200 120 \
+            --window-size 660 400 \
+            --icon-size 100 \
+            --icon "MacVault.app" 180 210 \
+            --hide-extension "MacVault.app" \
+            --app-drop-link 480 210 \
+            "build/MacVault.dmg" \
+            "build/dmg_staging/"
+
+      - name: Remove quarantine attribute
+        run: xattr -cr build/MacVault.dmg || true
+
+      - name: Upload DMG as build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MacVault-dmg
+          path: build/MacVault.dmg
+
+      - name: Attach DMG to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/MacVault.dmg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

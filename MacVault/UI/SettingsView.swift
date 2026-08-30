@@ -1230,7 +1230,7 @@ private struct AboutView: View {
                     .fill(Color.orange.opacity(0.08))
             )
 
-            Link(destination: URL(string: "https://github.com/dweep-desai/FaceGate-Mac")!) {
+            Link(destination: URL(string: "https://github.com/ayushcmdx/mac-vault-app")!) {
                 HStack(spacing: 6) {
                     Image("GitHubIcon")
                         .resizable()
@@ -1241,7 +1241,7 @@ private struct AboutView: View {
                 }
             }
 
-            Link(destination: URL(string: "https://github.com/sponsors/dweep-desai")!) {
+            Link(destination: URL(string: "https://github.com/ayushcmdx/mac-vault-app")!) {
                 HStack(spacing: 6) {
                     Image(systemName: "heart.fill")
                         .resizable()
@@ -1257,7 +1257,7 @@ private struct AboutView: View {
                 Text("Open Source — MIT License")
                     .font(.system(size: 11))
                     .foregroundColor(.secondary)
-                Text("© 2026 Dweep Desai")
+                Text("© 2026 Ayush ")
                     .font(.system(size: 11))
                     .foregroundColor(.secondary.opacity(0.7))
             }

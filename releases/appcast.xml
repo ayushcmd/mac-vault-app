@@ -1,128 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>FaceGate Changelog</title>
-    <description>Most recent changes to FaceGate.</description>
+    <title>MacVault Changelog</title>
+    <description>Most recent changes to MacVault.</description>
     <language>en</language>
     <item>
-      <title>Version 1.2.1</title>
+      <title>Version 1.1.0</title>
       <description><![CDATA[
         <ul>
           <li>Fix: Fixed camera initialization failure on 720p FaceTime HD cameras and external webcams by setting session preset after attaching device input</li>
         </ul>
       ]]></description>
-      <pubDate>Thu, 20 Aug 2026 11:07:09 +0530</pubDate>
+      <pubDate>Thu, 30 Aug 2026 15:30:09 +0530</pubDate>
       <enclosure
-        url="https://github.com/dweep-desai/FaceGate-Mac/releases/download/v1.2.1/FaceGate-v1.2.1.dmg"
+        url="https://github.com/ayushcmdx/mac-vault-app/releases/download/v1.1.0/MacVault.dmg"
         sparkle:version="6"
-        sparkle:shortVersionString="1.2.1"
+        sparkle:shortVersionString="1.1.0"
         sparkle:edSignature="UJvWfL9KAqNsU/cunidAUA9vbzOjW48KO9zxJHIIOEXzKmEy5OO/ZN2X8dI6nYuhwp1l2tfWI9m/IbmBlsh3Aw=="
         length="4951999"
-        type="application/octet-stream" />
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-    </item>
-    <item>
-      <title>Version 1.2.0</title>
-      <description><![CDATA[
-        <ul>
-          <li>New: Enroll up to 3 different faces so family or coworkers can also unlock apps</li>
-          <li>New: Choose between your built-in camera and an external USB webcam</li>
-          <li>New: Pick how the auto-lock timer counts — from your last unlock, or from when FaceGate detects you stepped away</li>
-          <li>New: Each locked app can have its own timer mode</li>
-          <li>New: You can now disable the Emergency Kill Shortcut in Settings if you keep triggering it by accident</li>
-          <li>New: Face enrollment is simpler — just look straight, left, and right (no more head tilt)</li>
-          <li>Fix: Touch ID prompt no longer gets stuck on screen after switching back to face unlock</li>
-          <li>Fix: Lock screen windows no longer lose focus after authenticating with Touch ID or password</li>
-          <li>Fix: Fixed a rare crash when rapidly locking and unlocking apps</li>
-          <li>Fix: Display brightness is no longer left at maximum after closing the enrollment window</li>
-          <li>Fix: Face unlock is more secure with constant-time password checking</li>
-          <li>Fix: Sparkle updates now show a helpful alert if macOS uninstall protection blocks the update</li>
-        </ul>
-      ]]></description>
-      <pubDate>Sun, 28 Jun 2026 23:52:38 +0400</pubDate>
-      <enclosure
-        url="https://github.com/dweep-desai/FaceGate-Mac/releases/download/v1.2.0/FaceGate-v1.2.0.dmg"
-        sparkle:version="5"
-        sparkle:shortVersionString="1.2.0"
-        sparkle:edSignature="QO5VmRPzp+82vpnc6Z6odu4LZvorWbX5Jz+pb7lPvz5tcIlMqWANTcdJpkn+lJDHjppcCk2McMnUh0eacghfDg=="
-        length="11073402"
-        type="application/octet-stream" />
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-    </item>
-    <item>
-      <title>Version 1.1.1</title>
-      <description><![CDATA[
-        <ul>
-          <li>Fix: Display brightness no longer stuck at max when closing enrollment window early</li>
-          <li>Fix: onDisappear handler cancels enrollment on window close</li>
-          <li>Add: Sponsor on GitHub link in About page</li>
-        </ul>
-      ]]></description>
-      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
-      <enclosure
-        url="https://github.com/dweep-desai/FaceGate-Mac/releases/download/v1.1.1/FaceGate-1.1.1.dmg"
-        sparkle:version="4"
-        sparkle:shortVersionString="1.1.1"
-        sparkle:edSignature="isEkuFGo5wUg9tx7lEETf44J9GERKSlKYq0NA8iMDytFG9Uep4+zmy1p06bPURHwWAcLBmf0mErgZs6VDusUAg=="
-        length="11048739"
-        type="application/octet-stream" />
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-    </item>
-    <item>
-      <title>Version 1.1.0</title>
-      <description><![CDATA[
-        <ul>
-          <li>New: Camera picker — choose between built-in and external USB cameras</li>
-          <li>New: External camera auto-detection with user override</li>
-          <li>Fix: About page now shows correct version from bundle</li>
-        </ul>
-      ]]></description>
-      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
-      <enclosure
-        url="https://github.com/dweep-desai/FaceGate-Mac/releases/download/v1.1.0/FaceGate-1.1.0.dmg"
-        sparkle:version="3"
-        sparkle:shortVersionString="1.1.0"
-        sparkle:edSignature="NBkMtGwJ+AriGoWaNz68w7NomdL8dn8Uje1Yv2SdE0PWcZKPv8jgXdjM/0sHnUWjAZMI+0eqfgw4O00B0GVHCQ=="
-        length="11045781"
-        type="application/octet-stream" />
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-    </item>
-    <item>
-      <title>Version 1.0.1</title>
-      <description><![CDATA[
-        <ul>
-          <li>Fix: 'Disable Face Unlock during certain hours' now works when toggled on mid-window</li>
-          <li>Fix: FaceAuthManager correctly falls back to default hours when UserDefaults keys are missing</li>
-        </ul>
-      ]]></description>
-      <pubDate>Mon, 23 Jun 2026 00:00:00 +0000</pubDate>
-      <enclosure
-        url="https://github.com/dweep-desai/FaceGate-Mac/releases/download/v1.0.1/FaceGate-1.0.1.dmg"
-        sparkle:version="2"
-        sparkle:shortVersionString="1.0.1"
-        sparkle:edSignature="+DyZRvrepXK3A6/bqBVPWbLYUvma4hcQj130YFGrvcpx2T/8RgYBmSvsKMD/r1TUfmhy2rQ8arYuChQruzTUAA=="
-        length="11027892"
-        type="application/octet-stream" />
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-    </item>
-    <item>
-      <title>Version 1.0.0</title>
-      <description><![CDATA[
-        <ul>
-          <li>Initial release</li>
-          <li>App locking with face recognition</li>
-          <li>Touch ID and password fallback</li>
-          <li>Liveness detection</li>
-          <li>Session timers and lock-on-sleep</li>
-        </ul>
-      ]]></description>
-      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
-      <enclosure
-        url="https://github.com/dweep-desai/FaceGate-Mac/releases/download/v1.0.0/FaceGate-1.0.0.dmg"
-        sparkle:version="1"
-        sparkle:shortVersionString="1.0.0"
-        sparkle:edSignature="vy1k8XdoK1Io0AqA9k1vPkNHGyhD2gDTmxwOKVnr/CyXZ7WPU3W3Cz7wIeK+8E2mBzbqIJB+u3GUj1Zx6jKYBA=="
-        length="11026815"
         type="application/octet-stream" />
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
     </item>

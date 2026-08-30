@@ -43,7 +43,7 @@ final class InstalledAppsScanner {
 
         // Filter out MacVault itself and system daemons without UI.
         let excludedBundleIDs: Set<String> = [
-            "com.dweep.FaceGate",
+            "com.ayushcmdx.MacVault",
             "com.apple.finder",  // Finder can't meaningfully be locked
         ]
 
