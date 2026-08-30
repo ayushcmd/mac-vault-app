@@ -102,9 +102,6 @@ brew install --cask ayushcmdx/tap/mac-vault
 
 <br>
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/chart?repos=ayushcmdx/mac-vault-app&type=date&legend=top-left)](https://www.star-history.com/?repos=ayushcmdx%2Fmac-vault-app&type=date&legend=top-left)
 
 ## Security & Privacy
 
