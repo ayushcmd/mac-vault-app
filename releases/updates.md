@@ -35,7 +35,7 @@ xcodegen generate
 
 ```bash
 # 3a. Extract pre-compiled model from the previous DMG
-hdiutil attach -nobrowse -mountpoint /tmp/mv_mnt MacVault-1.0.0.dmg
+hdiutil attach -nobrowse -mountpoint /tmp/mv_mnt MacVault-1.1.0.dmg
 cp -R /tmp/mv_mnt/MacVault.app/Contents/Resources/FaceEmbedding.mlmodelc /tmp/
 hdiutil detach /tmp/mv_mnt
 

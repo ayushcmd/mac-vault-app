@@ -87,7 +87,7 @@ private struct CodexSettingsSidebar: View {
             VStack(alignment: .leading, spacing: 0) {
                 VStack(alignment: .leading, spacing: 8) {
                     VStack(alignment: .leading, spacing: 1) {
-                        Text("FaceGate")
+                        Text("MacVault")
                             .font(.system(size: 15, weight: .semibold))
                             .foregroundStyle(.white.opacity(0.92))
                         Text("Settings")
@@ -725,7 +725,7 @@ private struct BehaviorSettingsView: View {
     var body: some View {
         Form {
             Section {
-                Toggle("Launch FaceGate at Login", isOn: $launchAtLogin)
+                Toggle("Launch MacVault at Login", isOn: $launchAtLogin)
                     .onChangeCompat(of: launchAtLogin) { newValue in
                         setLaunchAtLogin(newValue)
                     }
@@ -742,7 +742,7 @@ private struct BehaviorSettingsView: View {
                     }
                 ))
                 .disabled(isUpdatingUninstallProtection)
-                Text("Changing this setting requires administrator authentication. When enabled, FaceGate is protected from deletion to safeguard your locked applications.")
+                Text("Changing this setting requires administrator authentication. When enabled, MacVault is protected from deletion to safeguard your locked applications.")
                     .font(.system(size: 11))
                     .foregroundColor(.secondary)
             } header: {
@@ -1025,7 +1025,7 @@ private struct BehaviorSettingsView: View {
                         .font(.system(size: 11, weight: .semibold))
                         .foregroundColor(.blue)
                     
-                    Text("Pressing the shortcut above at any time will instantly quit FaceGate without requiring authentication.")
+                    Text("Pressing the shortcut above at any time will instantly quit MacVault without requiring authentication.")
                         .font(.system(size: 11))
                         .foregroundColor(.secondary)
                     }
@@ -1117,7 +1117,7 @@ private struct BehaviorSettingsView: View {
     }
 
     private var protectionTargetPath: String {
-        let installedPath = "/Applications/FaceGate.app"
+        let installedPath = "/Applications/MacVault.app"
         if FileManager.default.fileExists(atPath: installedPath) {
             return installedPath
         }
@@ -1155,7 +1155,7 @@ private struct BehaviorSettingsView: View {
             command = "chflags -R nouchg '\(escapedPath)' && chown -R \(username):staff '\(escapedPath)'"
         }
         
-        let source = "do shell script \"\(command)\" with administrator privileges with prompt \"FaceGate wants to make changes.\""
+        let source = "do shell script \"\(command)\" with administrator privileges with prompt \"MacVault wants to make changes.\""
         
         DispatchQueue.global(qos: .userInitiated).async {
             var error: NSDictionary?
@@ -1164,7 +1164,7 @@ private struct BehaviorSettingsView: View {
             
             DispatchQueue.main.async {
                 if let error = error {
-                    NSLog("[FaceGate] Uninstall protection failed: \(error)")
+                    NSLog("[MacVault] Uninstall protection failed: \(error)")
                     self.uninstallProtection = self.getActualProtectionState()
                 } else {
                     UserDefaults.standard.set(enabled, forKey: FGConstants.uninstallProtectionKey)
@@ -1198,7 +1198,7 @@ private struct AboutView: View {
             }
 
             VStack(spacing: 4) {
-                Text("FaceGate")
+                Text("MacVault")
                     .font(.system(size: 22, weight: .bold, design: .rounded))
                 Text("Version \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0.0")")
                     .font(.system(size: 12))
