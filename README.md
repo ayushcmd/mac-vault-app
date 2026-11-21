@@ -141,7 +141,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete technical architecture a
 
 ## License
 
-MIT License. See [LICENSE](LICENSE).
+Apache License 2.0 for original contributions controlled by the copyright holder. See [LICENSE](LICENSE) and [NOTICE](NOTICE). The earlier MIT license is preserved in [LICENSES/MIT-previous.txt](LICENSES/MIT-previous.txt); existing MIT grants remain valid.
 
 ---
 
